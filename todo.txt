@@ -1,0 +1,8 @@
+
+======  TODO  ========================
+    - Add randomizer funcion to get random recipes
+
+    - Add popup to add recipe
+    
+    - Add property to Recipe to check for avaiability to change that specific recipe to another recipe
+        * send in function in property that takes the id of the recipe as an argument
