@@ -13,7 +13,6 @@
     <h3>{recipe.name}</h3>
     <button style="display: {defaultVisable}" on:click={toggle}>Öppna</button>
     <div style="display: {defaultHidden}">
-        <p>{recipe.description}</p>
         <ul>
             {#each recipe.products as product}
                 <li>
