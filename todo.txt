@@ -19,3 +19,4 @@
 
 ===== Longterm Additions =============
     - Add more information about products for example calories and calulcate calories for the whole meal
+    
