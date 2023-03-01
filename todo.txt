@@ -1,12 +1,21 @@
 
 ======  TODO  ========================
-    - Add randomizer function to get random recipes
+    - Add lists to save generated recipes in
+        *make button to generate shopping list (inköpslista) based on recipes in list
 
-    - Add popup to add recipe
+    - Add view for list with stored recipes
+        *add view to see complete recipe (here you should also be able to change values for example number of people to cook for, changing number of people that are going to eat 
+        should change (calories per person *later addition*) and how much of every product you need)
+
+    - Add view to see all recipes
+        *add popup to add new recipe
     
-    - Add property to Recipe to check for avaiability to change that specific recipe to another recipe
+    - Add property to MiniRecipe component to check to replace that specific recipe
         * send in function in property that takes the id of the recipe as an argument
 
+
+===== Stuff to think about when saving data for products ======
+    - If you enter a recipe for 4 person, devide all values and store amount needed of every porduct for 1 person
 
 ===== Longterm Additions =============
     - Add more information about products for example calories and calulcate calories for the whole meal
