@@ -1,17 +1,12 @@
 
 ======  TODO  ========================
-    - Add view for list with stored recipes
-        *add view to see complete recipe (here you should also be able to change values for example number of people to cook for, changing number of people that are going to eat 
-        should change (calories per person *later addition*) and how much of every product you need)
+    - add view to see complete recipe (show description of recipe etc)
 
     - add popup module to show shoppinglist in single list view
 
     - add slider to change number of people the recipe should be for in MiniRecipe component (should change amount of each product needed for the recipe)
 
-    - Make "generate recipes-part into a popup modal
-
-    - Add view to see all recipes
-        *add popup to add new recipe
+    - Make "generate recipes"-part into a popup modal
     
     - Add property to MiniRecipe component to check to replace that specific recipe
         * send in function in property that takes the id of the recipe as an argument
