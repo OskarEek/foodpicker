@@ -1,5 +1,5 @@
 <script>
-import { lists } from './testData.js'
+import { lists } from './listsTestData.js'
 </script>
 
 <h1>Mina listor:</h1>

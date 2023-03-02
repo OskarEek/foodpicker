@@ -1,6 +1,8 @@
 <script>
     import MiniRecipe from '$lib/MiniRecipe.svelte'
+    import { recipes } from './recipesTestData'
 
+    let storedRecipes = recipes;
     let numberInput;
     let generatedRecipes = []
 
@@ -33,56 +35,23 @@
             return item[objectProperty] == value;
         }).length;
     }
-    
-    let storedRecipes = [
-        {id: 1, name: "Körtfärsås och spaghetti", description: "Koka spaghetti, stek köttfärs", products: [
-            {name: "köttfärs", amount: 500, measurement: "grams"},
-            {name: "spaghetti", amount: 500, measuremnt: "grams"},
-            {name: "tomatsås", amount: 100, measurement: "millilitres"},
-            {name: "lök", amount: 1, measurement: "st"}
-            ],
-            numberOfPeople: 4
-        },
-        {id: 2, name: "Pasta Carbonara", description: "Koka spaghetti, stek bacon, hacka lök", products: [
-            {name: "Bacon", amount: 200, measurement: "grams"},
-            {name: "spaghetti", amount: 600, measurement: "grams"},
-            {name: "lök", amount: 1, measurement: "st"},
-            {name: "permesan-ost", amount: 60, measurement: "grams"}
-            ],
-            numberOfPeople: 3
-        },
-        {id: 3, name: "Kycklingrullar", description: "Koka spaghetti, stek bacon, hacka lök", products: [
-            {name: "Bacon", amount: 200, measurement: "grams"},
-            {name: "spaghetti", amount: 600, measurement: "grams"},
-            {name: "lök", amount: 1, measurement: "st"},
-            {name: "permesan-ost", amount: 60, measurement: "grams"}
-            ],
-            numberOfPeople: 3
-        },
-        {id: 4, name: "Tacos", description: "Koka spaghetti, stek bacon, hacka lök", products: [
-            {name: "Bacon", amount: 200, measurement: "grams"},
-            {name: "spaghetti", amount: 600, measurement: "grams"},
-            {name: "lök", amount: 1, measurement: "st"},
-            {name: "permesan-ost", amount: 60, measurement: "grams"}
-            ],
-            numberOfPeople: 3
-        },
-        {id: 5, name: "Falukorv och Makaroner", description: "Koka spaghetti, stek bacon, hacka lök", products: [
-            {name: "Bacon", amount: 200, measurement: "grams"},
-            {name: "spaghetti", amount: 600, measurement: "grams"},
-            {name: "lök", amount: 1, measurement: "st"},
-            {name: "permesan-ost", amount: 60, measurement: "grams"}
-            ],
-            numberOfPeople: 3
-        }
-    ]
 
 </script>
 
-<label>Antal maträtter som ska genereras:</label>
-<input type="text" bind:value={numberInput} />
-<button on:click={generateRecipes}>Generate</button>
-{#each generatedRecipes as recipe, i}
-    <h2>Dag {i + 1}</h2>
-	<MiniRecipe recipe={recipe} />
-{/each}
+<div class="vstack gap-3">
+    <h1>Alla recept</h1>
+    {#each storedRecipes as recipe}
+        <a class="bg-light border" href="/recipes/{recipe.id}">{recipe.name}</a>
+    {/each}
+</div>
+
+<div>
+    <h1>Generera recept</h1>
+    <label>Antal maträtter som ska genereras:</label>
+    <input type="text" bind:value={numberInput} />
+    <button on:click={generateRecipes}>Generate</button>
+    {#each generatedRecipes as recipe, i}
+        <h2>Dag {i + 1}</h2>
+        <MiniRecipe recipe={recipe} />
+    {/each}
+</div>
